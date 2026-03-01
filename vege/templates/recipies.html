@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-5">
+    <form class="col col-6 mx-auto card p-3 shadow-lg" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <h2 class="text-center">Add Recipie</h2>
+        <hr>
+        <div class="mb-3">
+            <label class="form-label">Recipie Name</label>
+            <input name="recipie_name" required type="text" class="form-control">
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Recipie Description</label>
+            <textarea name="recipie_description" required class="form-control"></textarea>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Recipie Image</label>
+            <input name="recipie_image" type="file" class="form-control">
+        </div>
+
+        <button type="submit" class="btn btn-primary">Add Recipie</button>
+        {{recepies}}
+    </form>
+</div>
+{% endblock %}
